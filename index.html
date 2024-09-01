@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accès Restreint</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input[type="password"] {
+            padding: 10px;
+            width: 200px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-container">
+        <h2>Accès Restreint</h2>
+        <input type="password" id="password" placeholder="Entrez le mot de passe" />
+        <button onclick="checkPassword()">Entrer</button>
+        <p id="error-message" style="color: red; display: none;">Mot de passe incorrect !</p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            const correctPassword = "benimaru"; // Remplacez par votre mot de passe
+
+            if (password === correctPassword) {
+                window.location.href = "carte.html"; // Redirection vers la page protégée
+            } else {
+                document.getElementById("error-message").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
